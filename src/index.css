@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-slide > div{
+  margin:0 20px;
+}
+
+.custom-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-dots li {
+  margin: 0 5px;
+}
+
+.custom-dots li button:before {
+  content: "";
+  width: 10px; /* Adjust width */
+  height: 10px; /* Adjust height */
+  background-color: #005A8C;
+  border-radius: 50%;
+}
