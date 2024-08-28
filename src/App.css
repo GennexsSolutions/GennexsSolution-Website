@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: #f0f0f0; /* Adjust the color as per your design */
+}
+
+
+

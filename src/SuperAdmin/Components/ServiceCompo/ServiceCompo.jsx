@@ -5,16 +5,19 @@ const DataTable = ({ data, onEdit, onDelete, onAdd }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 5;
 
+  // Calculate the page count
   const pageCount = Math.ceil(data.length / itemsPerPage);
+
+  // Calculate the indexes for slicing data
+  const startIdx = currentPage * itemsPerPage;
+  const endIdx = startIdx + itemsPerPage;
+
+  // Slice the data array to get the items for the current page
+  const paginatedData = data.slice(startIdx, endIdx);
 
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };
-
-  const paginatedData = data.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
 
   return (
     <div className="overflow-x-auto">
@@ -80,7 +83,6 @@ const DataTable = ({ data, onEdit, onDelete, onAdd }) => {
             </tr>
           ))}
         </tbody>
-
       </table>
 
       <div className="flex justify-center mt-4">
